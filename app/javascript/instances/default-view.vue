@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <p>{{ message }}</p>
+    <b-button type="is-primary">{{ message }}</b-button>
   </div>
 </template>
 
@@ -12,11 +12,5 @@ export default {
     }
   }
 }
-</script>
 
-<style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
-</style>
+</script>
