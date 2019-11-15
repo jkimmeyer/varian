@@ -44,6 +44,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Better visualization of errors
   gem 'better_errors'
+  # Linting
+  gem 'rubocop'
+  gem 'rubocop-performance'
 end
 
 group :test do
