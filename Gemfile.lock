@@ -58,6 +58,10 @@ GEM
       zeitwerk (~> 2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    better_errors (2.5.1)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
@@ -207,6 +211,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  better_errors
   bootsnap (>= 1.4.2)
   capybara (>= 2.15)
   hamlit
