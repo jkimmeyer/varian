@@ -1462,6 +1462,11 @@ builtin-status-codes@^3.0.0:
   resolved "https://registry.yarnpkg.com/builtin-status-codes/-/builtin-status-codes-3.0.0.tgz#85982878e21b98e1c66425e03d0174788f569ee8"
   integrity sha1-hZgoeOIbmOHGZCXgPQF0eI9Wnug=
 
+bulma@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/bulma/-/bulma-0.8.0.tgz#ac1606431703a4761b18a4a2d5cc1fa864a2aece"
+  integrity sha512-nhf3rGyiZh/VM7FrSJ/5KeLlfaFkXz0nYcXriynfPH4vVpnxnqyEwaNGdNCVzHyyCA3cHgkQAMpdF/SFbFGZfA==
+
 bytes@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-3.0.0.tgz#d32815404d689699f85a4ea4fa8755dd13a96048"
@@ -6912,6 +6917,11 @@ terser@^4.1.2, terser@^4.3.9:
     commander "^2.20.0"
     source-map "~0.6.1"
     source-map-support "~0.5.12"
+
+three@^0.110.0:
+  version "0.110.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.110.0.tgz#8719591de1336269113ee79f4268ba247b2324f8"
+  integrity sha512-wlurH8XBO9Sd5VIw8nBa+taLR20kqaI4e9FiuMh6tqK8eOS2q2R+ZoUyufbyDTVTHhs8GiTbv0r2CMLkwerFJg==
 
 through2@^2.0.0:
   version "2.0.5"
