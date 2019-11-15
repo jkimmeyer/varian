@@ -6,6 +6,9 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Load environment variables from .env files
+Dotenv::Railtie.load if defined?(Dotenv)
+
 module Junction
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
