@@ -34,6 +34,11 @@ export default {
       default: null,
     }
   },
+    treatmentPlan: {
+      type: Object,
+      default: {},
+      required: true,
+    }
 }
 </script>
 

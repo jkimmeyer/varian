@@ -13,27 +13,27 @@
           destroy-on-hide>
 
           <b-step-item label="Organ Countouring" :clickable="isStepsClickable">
-            <the-first-step :patientId="patientId"></the-first-step>
+            <the-first-step :patientId="patientId" :treatmentPlan="treatmentPlan"></the-first-step>
           </b-step-item>
 
           <b-step-item label="Gross Deviation" :clickable="isStepsClickable">
-            <the-second-step :patientId="patientId"></the-second-step>
+            <the-second-step :patientId="patientId" :treatmentPlan="treatmentPlan"></the-second-step>
           </b-step-item>
 
           <b-step-item label="Dose Distribution" :clickable="isStepsClickable">
-            <the-third-step :patientId="patientId"></the-third-step>
+            <the-third-step :patientId="patientId" :treatmentPlan="treatmentPlan"></the-third-step>
           </b-step-item>
 
           <b-step-item label="Treatment Protocol" :clickable="isStepsClickable" disabled>
-            <the-fourth-step :patientId="patientId"></the-fourth-step>
+            <the-fourth-step :patientId="patientId" :treatmentPlan="treatmentPlan"></the-fourth-step>
           </b-step-item>
 
           <b-step-item label="Optimatility of Treatment" :clickable="isStepsClickable" disabled>
-            <the-fifth-step :patientId="patientId"></the-fifth-step>
+            <the-fifth-step :patientId="patientId" :treatmentPlan="treatmentPlan"></the-fifth-step>
           </b-step-item>
 
           <b-step-item label="Robustness and Treatment safety" :clickable="isStepsClickable" disabled>
-            <the-sixt-step :patientId="patientId"></the-sixt-step>
+            <the-sixt-step :patientId="patientId" :treatmentPlan="treatmentPlan"></the-sixt-step>
           </b-step-item>
         </b-steps>
       </div>
@@ -48,6 +48,8 @@ import TheFourthStep from '../review-process/fourth-step'
 import TheFifthStep from '../review-process/fifth-step'
 import TheSixtStep from '../review-process/sixt-step'
 import TheHeader from '../components/header'
+
+import { getCurrentTreatmentPlan } from '../api/patients'
 
 export default {
   components: {
@@ -68,11 +70,14 @@ export default {
       prevIcon: 'chevron-left',
       nextIcon: 'chevron-right',
       isStepsClickable: true,
+      treatmentPlan: {},
     }
   },
-  created () {
+  async created () {
     let url = window.location.pathname;
     this.patientId = parseInt(url.substring(url.lastIndexOf('/') + 1));
+    let response = await getCurrentTreatmentPlan(parseInt(url.substring(url.lastIndexOf('/') + 1)));
+    this.treatmentPlan = response.data;
   }
 }
 </script>

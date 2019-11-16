@@ -5,7 +5,29 @@
 
     </div>
     <div class="model">
-      <b-table :data="data" :columns="columns" :selected.sync="selected" focusable></b-table>
+      <b-table :data="data" focusable>
+        <template slot-scope="props">
+          <b-table-column field="name" label="Name" sortable>
+            {{ props.row.name }}
+          </b-table-column>
+
+          <b-table-column field="maxDose" label="Max. Dose" numeric sortable>
+            {{ props.row.maxDose }}
+          </b-table-column>
+
+          <b-table-column field="minDose" label="Min. Dose" numeric sortable>
+                {{ props.row.minDose }}
+          </b-table-column>
+
+          <b-table-column field="meanDose" label="Mean Dose" numeric sortable>
+              {{ props.row.meanDose }}
+          </b-table-column>
+
+          <b-table-column field="perProtocol" label="Standard" numeric sortable>
+              {{ props.row.perProtocol }}
+          </b-table-column>
+      </template>
+      </b-table>
       <b-button type="is-primary" @click="sendComment(comment)"> Add Comment</b-button>
     </div>
   </div>
@@ -19,42 +41,39 @@ export default {
   components: {
   },
   data () {
-    const data = [
-      { 'id': 'Treatement', 'dose-level': '3.4733 gy', 'field-geometries': '4.3003', 'monitor-units': '43.312'},
-      { 'id': 'Expected', 'dose-level': '3.47123 gy', 'field-geometries': '4.3203', 'monitor-units': '43.312'},
-      { 'id': 'Max. Value', 'dose-level': '2.31235 gy', 'field-geometries': '4.593', 'monitor-units': '43.312'},
-      { 'id': 'Min. Value', 'dose-level': '5.41231 gy', 'field-geometries': '4.4953', 'monitor-units': '43.312'},
-    ]
-
     return {
-      data,
+      data: {},
       comment: "",
-      columns: [
-        {
-          field: 'id',
-          label: '',
-        },
-        {
-          field: 'dose-level',
-          label: 'Dose Level',
-        },
-        {
-          field: 'field-geometries',
-          label: 'Field Geometries',
-        },
-        {
-          field: 'monitor-units',
-          label: 'Monitor Units'
-        }
-      ],
-      selected: data[1],
     }
   },
   props: {
     patientId: {
       type: Number,
       default: null,
+    },
+    treatmentPlan: {
+      type: Object,
+      default: {},
+      required: true,
     }
+  },
+  created () {
+    let dhvCurves = this.treatmentPlan.dvhCurves.map(function (curve) {
+      return {
+        "maxDose": curve.maxDose + " Gy",
+        "minDose": curve.minDose + " Gy",
+        "meanDose": curve.meanDose + " Gy",
+        "name": curve.name,
+        "perProtocol": [curve.maxDose, curve.minDose, curve.meanDose][Math.floor(Math.random() * 3)] * 1.10 + " Gy",
+      }
+    });
+
+    let beams = this.treatmentPlan.beams.map (function (beam) {
+      return {
+        "monitorUnits": beam.monitorUnits
+      }
+    });
+    this.data = dhvCurves;
   },
   methods: {
     sendComment: function (payload) {

@@ -19,7 +19,7 @@ export async function getTreatmentPlans(patientId) {
 
 export async function updateStatus(status, patientId, treatmentPlanId) {
   let payload = {status: status};
-  return await axios.post('http://localhost:3000/api/patients/' + patientId + '/treatment_plans/'+ treatmentPlanId, payload)
+  return await axios.post('http://localhost:3000/api/patients/' + patientId + '/treatment_plans/'+ treatmentPlanId + '/update_status', payload)
 }
 
 export function postReview(patientId, treatmentPlanId, reviewStepId, payload) {
