@@ -1,14 +1,12 @@
 <template>
-  <div class="review-step">
-    <h1 class="title has-text-centered">Organ Countouring</h1>
-    <div class="side">
-      <v-select :options="options"></v-select>
-      <b-input maxlength="200" type="textarea" v-model="comment"></b-input>
-      <b-button type="is-primary" @click="sendComment(comment)"> Add Comment</b-button>
-    </div>
-
+  <div class="review-step columns">
     <div id="model" class="model">
       <v-3d-renderer></v-3d-renderer>
+    </div>
+    <div class="side">
+      <v-select class="select" v-if="options.length > 0" :options="options" v-model="selectedOptions"></v-select>
+      <b-input class="input-field" maxlength="400" type="textarea" v-model="comment"></b-input>
+      <b-button type="is-primary" @click="sendComment(comment)"> Add Comment</b-button>
     </div>
   </div>
 </template>
@@ -32,16 +30,17 @@ export default {
     treatmentPlan: {
       type: Object,
       default: {},
-      required: true,
     }
   },
   data () {
     return {
-      options: [
-        'Stomach', 'Heart', 'Brain', 'Tongue', 'liver', 'spinal cord'
-      ],
-      comment: ''
+      options: [],
+      comment: '',
+      selectedOptions: [],
     }
+  },
+  mounted(){
+    this.options = ["Heart", "Rectum", "Liver", "Bladder", "Femur_L", "Femur_R"]
   },
   methods: {
     sendComment: function (payload) {

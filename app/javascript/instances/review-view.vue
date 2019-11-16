@@ -70,13 +70,12 @@ export default {
       prevIcon: 'chevron-left',
       nextIcon: 'chevron-right',
       isStepsClickable: true,
-      treatmentPlan: {},
+      treatmentPlan: null,
     }
   },
   async created () {
-    let url = window.location.pathname;
-    this.patientId = parseInt(url.substring(url.lastIndexOf('/') + 1));
-    let response = await getCurrentTreatmentPlan(parseInt(url.substring(url.lastIndexOf('/') + 1)));
+    this.patientId = 1;
+    let response = await getCurrentTreatmentPlan(1);
     this.treatmentPlan = response.data;
   }
 }

@@ -9,16 +9,22 @@ class TreatmentPlanSerializer < ActiveModel::Serializer
   has_many :dvh_curves
 
   def bitmaps
+    return [] unless object.bitmaps.attached?
+
     object.bitmaps.map do |bitmap|
       rails_blob_path(bitmap, only_path: true)
     end
   end
 
   def dose_voxels
+    return unless object.dose_voxels.attached?
+
     rails_blob_path(object.dose_voxels, only_path: true)
   end
 
   def dvh_graph
+    return unless object.dvh_graph.attached?
+
     rails_blob_path(object.dvh_graph, only_path: true)
   end
 end

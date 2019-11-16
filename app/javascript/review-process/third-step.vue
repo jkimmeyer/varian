@@ -1,26 +1,25 @@
 <template>
-  <div class="review-step">
-    <h1 class="title has-text-centered">Organ Countouring</h1>
-    <div class="side">
+  <div class="step-3 columns">
+    <div id="model column is-half" class="model">
+      <v-2d-isodoses :patientId="patientId"></v-2d-isodoses>
     </div>
-    <div id="model" class="model">
-      <v-3d-renderer></v-3d-renderer>
+    <div class="side column is-half">
     </div>
   </div>
 </template>
 
 <script>
 import { postReview } from "../api/patients.js"
-import V3dRenderer from "../components/3d-renderer"
+import V2dIsodoses from "../components/2d-isodoses"
 
 export default {
   name: "the-third-step",
   components: {
-    V3dRenderer
+    V2dIsodoses
   },
   data () {
     return {
-      comment: ''
+      comment: '',
     }
   },
   methods: {

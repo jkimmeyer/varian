@@ -1,6 +1,5 @@
 import axios from 'axios'
 
-
 export async function getPatients() {
   return await axios.get('http://localhost:3000/api/patients/');
 }
@@ -34,24 +33,24 @@ export function postReview(patientId, treatmentPlanId, reviewStepId, payload) {
   })
 }
 
-export function getPatientTreatments(patientId) {
-  axios.get('http://localhost:3000/api/patients/' + patientId + '/treatment_plans')
-  .then(response => {
-    // JSON responses are automatically parsed.
-    return response;
-  })
-  .catch(e => {
-    return e;
-  })
-}
+// export function getPatientTreatments(patientId) {
+//   axios.get('http://localhost:3000/api/patients/' + patientId + '/treatment_plans')
+//   .then(response => {
+//     // JSON responses are automatically parsed.
+//     return response;
+//   })
+//   .catch(e => {
+//     return e;
+//   })
+// }
 
-export function getPatientTreatment(patientId, treatmentId) {
-  axios.get('http://localhost:3000/api/patients/' + patientId + '/treatment_plans/' + treatmentId)
-  .then(response => {
-    // JSON responses are automatically parsed.
-    return response;
-  })
-  .catch(e => {
-    return e;
-  })
-}
+// export function getPatientTreatment(patientId, treatmentId) {
+//   axios.get('http://localhost:3000/api/patients/' + patientId + '/treatment_plans/' + treatmentId)
+//   .then(response => {
+//     // JSON responses are automatically parsed.
+//     return response;
+//   })
+//   .catch(e => {
+//     return e;
+//   })
+// }
