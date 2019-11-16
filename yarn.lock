@@ -1821,6 +1821,11 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
+commander@0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-0.5.2.tgz#f270326709a115a126cfed5623852439b8e4a3b5"
+  integrity sha1-8nAyZwmhFaEmz+1WI4UkObjko7U=
+
 commander@^2.20.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
@@ -6692,6 +6697,13 @@ static-extend@^0.1.1:
     define-property "^0.2.5"
     object-copy "^0.1.0"
 
+stats@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/stats/-/stats-1.0.0.tgz#4a3f63d81bd52cdecee313dacf1572aff57b7d29"
+  integrity sha1-Sj9j2BvVLN7O4xPazxVyr/V7fSk=
+  dependencies:
+    commander "0.5.2"
+
 "statuses@>= 1.4.0 < 2", "statuses@>= 1.5.0 < 2", statuses@~1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.5.0.tgz#161c7dac177659fd9811f43771fa99381478628c"
@@ -6961,6 +6973,21 @@ terser@^4.1.2, terser@^4.3.9:
     commander "^2.20.0"
     source-map "~0.6.1"
     source-map-support "~0.5.12"
+
+three-orbit-controls@82.1.0:
+  version "82.1.0"
+  resolved "https://registry.yarnpkg.com/three-orbit-controls/-/three-orbit-controls-82.1.0.tgz#11a7f33d0a20ecec98f098b37780f6537374fab4"
+  integrity sha1-EafzPQog7OyY8Jizd4D2U3N0+rQ=
+
+three-ply-loader@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/three-ply-loader/-/three-ply-loader-1.0.0.tgz#dab2da78cef94968e0df20d0896463ffeb272cf9"
+  integrity sha1-2rLaeM75SWjg3yDQiWRj/+snLPk=
+
+three-window-resize@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/three-window-resize/-/three-window-resize-1.0.4.tgz#d636a65d22f587c87c3d3b6129d9b5d20b0d7d09"
+  integrity sha1-1jamXSL1h8h8PTthKdm10gsNfQk=
 
 three@^0.110.0:
   version "0.110.0"

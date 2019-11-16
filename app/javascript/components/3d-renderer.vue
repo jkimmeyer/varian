@@ -4,12 +4,12 @@
 </template>
 
 <script>
-import { init, animate } from '../threejs/functions'
+import { ThreeJSHelper, animate } from '../threejs/functions'
 
 export default {
   name: "v-3d-renderer",
   mounted () {
-    init();
+    ThreeJSHelper.init();
     animate();
   }
 }
