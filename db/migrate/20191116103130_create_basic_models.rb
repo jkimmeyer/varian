@@ -17,7 +17,7 @@ class CreateBasicModels < ActiveRecord::Migration[6.0]
       t.timestamps
     end
 
-    create_table :image_3ds do |t|
+    create_table :three_images do |t|
       t.string :name
       t.text :grid_size
       t.references :treatment_plan
@@ -31,7 +31,7 @@ class CreateBasicModels < ActiveRecord::Migration[6.0]
       t.text :center_point
       t.string :color
       t.boolean :is_target_structure
-      t.references :image_3d
+      t.references :three_image
 
       t.timestamps
     end
