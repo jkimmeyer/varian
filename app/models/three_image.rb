@@ -1,5 +1,4 @@
-class Image3d < ApplicationRecord
-  self.table_name = :image_3ds
+class ThreeImage < ApplicationRecord
   # {
   #   "xSize": integer,
   #   "ySize": integer,
