@@ -7,8 +7,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 import TheHeader from '../components/header';
 import PatientOverview from '../components/patient-overview';
 

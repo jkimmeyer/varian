@@ -9,8 +9,7 @@ require("@rails/activestorage").start()
 require('jquery')
 require("channels")
 
-import '../../assets/stylesheets/bulma-overrides.scss'
-import 'buefy/dist/buefy.css'
+
 // Custom JavaScript
 // require('../custom/sutff/main.js')
 
@@ -23,11 +22,15 @@ import 'buefy/dist/buefy.css'
 import Vue from 'vue'
 import TurbolinksAdapter from 'vue-turbolinks';
 import Buefy from 'buefy'
+import axios from 'axios'
+
 
 import * as instances from '../instances'
 
 Vue.use(Buefy)
 Vue.use(TurbolinksAdapter)
+import 'buefy/dist/buefy.css'
+import '../bulma-overrides.scss'
 
 document.addEventListener('turbolinks:load', () => {
 

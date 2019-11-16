@@ -11,6 +11,7 @@
           slot-scope="props"
           class="card-header"
           role="button">
+          <b-tag type="is-dark">In Progress</b-tag>
           <p class="card-header-title">
             {{ patient.firstName }} {{ patient.lastName }}
           </p>
