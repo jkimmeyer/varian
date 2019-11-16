@@ -9,7 +9,8 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { getPatients } from '../api/patients'
+
 import TheHeader from '../components/header';
 import PatientOverview from '../components/patient-overview';
 
@@ -26,14 +27,7 @@ export default {
     },
   // Fetches posts when the component is created.
   created() {
-    axios.get('http://localhost:3000/api/patients')
-    .then(response => {
-      // JSON responses are automatically parsed.
-      this.patients = response.data
-    })
-    .catch(e => {
-      this.errors.push(e)
-    })
+    getPatients();
   }
 }
 

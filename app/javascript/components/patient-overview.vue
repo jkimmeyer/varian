@@ -30,6 +30,11 @@
         </div>
         <div class="card-content">
           <div class="content">
+            <ul class="patient-information">
+              <li v-bind:key="prop" v-show="value !== ''" v-for="(value, prop) in patient">
+                {{ prop.charAt(0).toUpperCase() + prop.slice(1) }}: {{ value.charAt(0).toUpperCase() + value.slice(1) }}
+              </li>
+            </ul>
           </div>
         </div>
       </b-collapse>

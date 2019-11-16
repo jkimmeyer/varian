@@ -6,3 +6,52 @@
   margin: 20px 0;
   width: 50%;
 }
+
+// Import Bulma's core
+@import "../../../node_modules/bulma/sass/utilities/_all.sass";
+
+// Set your colors
+$primary: #3a4b57;;
+$primary-invert: findColorInvert($primary);
+$twitter: #4099FF;
+$twitter-invert: findColorInvert($twitter);
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: (
+    "white": ($white, $black),
+    "black": ($black, $white),
+    "light": ($light, $light-invert),
+    "dark": ($dark, $dark-invert),
+    "primary": ($primary, $primary-invert),
+    "info": ($info, $info-invert),
+    "success": ($success, $success-invert),
+    "warning": ($warning, $warning-invert),
+    "danger": ($danger, $danger-invert),
+    "twitter": ($twitter, $twitter-invert)
+);
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+// Import Bulma and Buefy styles
+@import "../../../node_modules/bulma/bulma.sass";
+@import "../../../node_modules/buefy/src/scss/buefy";
+
+
+.step-1 {
+  display: grid;
+  grid-template-columns: 3fr 9fr;
+  grid-gap: 30px;
+}
+
+.title {
+  grid-column: 1 / 12;
+}
+
+.step-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

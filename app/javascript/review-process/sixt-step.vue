@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { sendData } from "../api/api.js"
+import { postReview } from "../api/patients.js"
 
 export default {
   name: "the-sixt-step",
@@ -18,9 +18,15 @@ export default {
   },
   methods: {
     sendComment: function (payload) {
-      sendData('comments', payload);
+      postReview('comments', payload);
     }
-  }
+  },
+  props: {
+    patientId: {
+      type: Number,
+      default: null,
+    }
+  },
 }
 </script>
 

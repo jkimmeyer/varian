@@ -12,27 +12,27 @@
           :icon-next="nextIcon">
 
           <b-step-item label="Organ Countouring" :clickable="isStepsClickable">
-            <the-first-step></the-first-step>
+            <the-first-step :patientId="patientId"></the-first-step>
           </b-step-item>
 
           <b-step-item label="Gross Deviation" :clickable="isStepsClickable">
-            <the-second-step></the-second-step>
+            <the-second-step :patientId="patientId"></the-second-step>
           </b-step-item>
 
           <b-step-item label="Dose Distribution" :clickable="isStepsClickable">
-            <the-third-step></the-third-step>
+            <the-third-step :patientId="patientId"></the-third-step>
           </b-step-item>
 
           <b-step-item label="Treatment Protocol" :clickable="isStepsClickable" disabled>
-            <the-fourth-step></the-fourth-step>
+            <the-fourth-step :patientId="patientId"></the-fourth-step>
           </b-step-item>
 
           <b-step-item label="Optimatility of Treatment" :clickable="isStepsClickable" disabled>
-            <the-fifth-step></the-fifth-step>
+            <the-fifth-step :patientId="patientId"></the-fifth-step>
           </b-step-item>
 
           <b-step-item label="Robustness and Treatment safety" :clickable="isStepsClickable" disabled>
-            <the-sixt-step></the-sixt-step>
+            <the-sixt-step :patientId="patientId"></the-sixt-step>
           </b-step-item>
         </b-steps>
       </div>
@@ -48,7 +48,6 @@ import TheFifthStep from '../review-process/fifth-step'
 import TheSixtStep from '../review-process/sixt-step'
 import TheHeader from '../components/header'
 
-
 export default {
   components: {
     TheFirstStep,
@@ -61,6 +60,7 @@ export default {
   },
   data() {
     return {
+      patientId: null,
       activeStep: 0,
       isAnimated: true,
       hasNavigation: true,
@@ -68,6 +68,10 @@ export default {
       nextIcon: 'chevron-right',
       isStepsClickable: true,
     }
+  },
+  created () {
+    let url = window.location.pathname;
+    this.patientId = url.substring(url.lastIndexOf('/') + 1);
   }
 }
 </script>

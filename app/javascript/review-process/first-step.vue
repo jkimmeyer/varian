@@ -1,10 +1,13 @@
 <template>
   <div class="step-1">
     <h1 class="title has-text-centered">Organ Countouring</h1>
-    <div class="view">
+    <div class="side">
       <v-select :options="options"></v-select>
       <b-input maxlength="200" type="textarea" v-model="comment"></b-input>
       <b-button type="is-primary" @click="sendComment(comment)"> Add Comment</b-button>
+    </div>
+
+    <div id="model" class="model">
       <v-3d-renderer></v-3d-renderer>
     </div>
   </div>
@@ -13,13 +16,19 @@
 <script>
 import V3dRenderer from '../components/3d-renderer'
 import VSelect from "../components/select"
-import { sendData } from "../api/api.js"
+import { postReview } from "../api/patients.js"
 
 export default {
   name: "the-first-step",
   components: {
     V3dRenderer,
     VSelect,
+  },
+  props: {
+    patientId: {
+      type: Number,
+      default: null,
+    }
   },
   data () {
     return {
@@ -32,7 +41,7 @@ export default {
   methods: {
     sendComment: function (payload) {
       let path = 'patient/3/plan/2/review/1/comments'
-      sendData(path, payload);
+      postReview(path, payload);
     }
   }
 }
