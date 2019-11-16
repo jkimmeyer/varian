@@ -29,6 +29,9 @@
 
     <template slot="end">
       <b-navbar-item tag="div">
+        <img style="border-radius: 50% !important;" src="/doctor2.jpg">
+      </b-navbar-item>
+      <b-navbar-item tag="div">
         <strong>Dr. Ferris Goodwell</strong>
       </b-navbar-item>
 
