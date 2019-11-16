@@ -18,11 +18,23 @@ class Api::TreatmentPlansController < ApplicationController
 
   def update_status
     @plan = @patient.treatment_plans.find(params[:id])
-    if params[:status].in?(%w[created rejected approved])
+    update_possible =
+      case params[:status]
+      when 'created'
+        @plan.resettable?
+      when 'rejected'
+        @plan.rejectable?
+      when 'approved'
+        @plan.approvable?
+      else
+        false
+      end
+
+    if update_possible
       @plan.update(status: params[:status])
       render json: @plan
     else
-      render json: { errors: ['only the statuses "created", "rejected", and "approved" are allowed!'] }, root: false, status: :unprocessable_entity
+      render json: { errors: ['only the statuses "created", "rejected", and "approved" are allowed! Also, the cycle is "created"->"rejected|approved"->"created".'] }, root: false, status: :unprocessable_entity
     end
   end
 
