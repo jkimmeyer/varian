@@ -1,15 +1,17 @@
 <template>
-  <div class="review-step columns">
-    <div class="model colucolumn is-halfmn">
-      <div class="threejs">
-        <div>{{ currentPlan }}</div>
+  <section class="section">
+    <div class="review-step columns">
+      <div class="model colucolumn is-halfmn">
+        <div class="threejs">
+          <div>{{ currentPlan }}</div>
+        </div>
       </div>
-    </div>
-    <div class="side column is-half"></div>
+      <div class="side column is-half"></div>
 
-    <b-button type="is-primary" :disabled="currentPlan === 1" @click="previous()">Previous Plan</b-button>
-    <b-button type="is-primary" :disabled="currentPlan > plans.length" @click="next()">Next Plan</b-button>
-  </div>
+      <b-button type="is-primary" :disabled="currentPlan === 1" @click="previous()">Previous Plan</b-button>
+      <b-button type="is-primary" :disabled="currentPlan > plans.length" @click="next()">Next Plan</b-button>
+    </div>
+  </section>
 </template>
 
 <script>

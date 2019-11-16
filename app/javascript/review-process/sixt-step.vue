@@ -1,22 +1,24 @@
 <template>
-  <div class="review-step columns">
-    <div class="model column is-half">
-    </div>
-    <div class="side column is-half">
-      <div class="field">
-        <b-checkbox>Position</b-checkbox>
+  <section class="section">
+    <div class="review-step columns">
+      <div class="model column is-half">
+      </div>
+      <div class="side column is-half">
+        <div class="field">
+          <b-checkbox>Position</b-checkbox>
+        </div>
+
+        <div class="field">
+          <b-checkbox>
+            Safety
+          </b-checkbox>
+        </div>
+
+        <a class="button is-primary" href="/report">Zusammenfassung</a>
       </div>
 
-      <div class="field">
-        <b-checkbox>
-          Safety
-        </b-checkbox>
-      </div>
-
-      <a class="button is-primary" href="/report">Zusammenfassung</a>
     </div>
-
-  </div>
+  </section>
 </template>
 
 <script>

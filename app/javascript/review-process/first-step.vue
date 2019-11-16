@@ -1,14 +1,16 @@
 <template>
-  <div class="review-step columns">
-    <div id="model" class="model column is-half">
-      <v-3d-renderer></v-3d-renderer>
+  <section class="section">
+    <div class="review-step columns">
+      <div id="model" class="model column is-half">
+        <v-3d-renderer></v-3d-renderer>
+      </div>
+      <div class="side column is-half">
+        <v-select :options="options"></v-select>
+        <b-input maxlength="200" type="textarea" v-model="comment"></b-input>
+        <b-button type="is-primary" @click="sendComment(comment)"> Add Comment</b-button>
+      </div>
     </div>
-    <div class="side column is-half">
-      <v-select :options="options"></v-select>
-      <b-input maxlength="200" type="textarea" v-model="comment"></b-input>
-      <b-button type="is-primary" @click="sendComment(comment)"> Add Comment</b-button>
-    </div>
-  </div>
+  </section>
 </template>
 
 <script>

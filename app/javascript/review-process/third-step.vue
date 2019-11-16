@@ -1,11 +1,13 @@
 <template>
-  <div class="step-3 columns">
-    <div id="model column is-half" class="model">
-      <v-2d-isodoses :patientId="patientId"></v-2d-isodoses>
+  <section class="section">
+    <div class="step-3 columns">
+      <div id="model column is-half" class="model">
+        <v-2d-isodoses :patientId="patientId"></v-2d-isodoses>
+      </div>
+      <div class="side column is-half">
+      </div>
     </div>
-    <div class="side column is-half">
-    </div>
-  </div>
+  </section>
 </template>
 
 <script>

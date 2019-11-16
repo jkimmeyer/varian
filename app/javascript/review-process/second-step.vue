@@ -1,10 +1,12 @@
 <template>
-  <div class="review-step columns">
-    <div class="model column is-half">
-      <v-3d-renderer></v-3d-renderer>
+  <section class="section">
+    <div class="review-step columns">
+      <div class="model column is-half">
+        <v-3d-renderer></v-3d-renderer>
+      </div>
+      <div class="side column is-half"></div>
     </div>
-    <div class="side column is-half"></div>
-  </div>
+  </section>
 </template>
 
 <script>
