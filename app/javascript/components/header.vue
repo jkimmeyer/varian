@@ -14,9 +14,6 @@
 
     <template slot="start">
       <b-navbar-item href="/">
-      </b-navbar-item>
-
-      <b-navbar-item href="/">
         Overview
       </b-navbar-item>
       <b-navbar-item href="/">
