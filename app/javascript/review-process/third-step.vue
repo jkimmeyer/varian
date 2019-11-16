@@ -4,6 +4,8 @@
       <v-2d-isodoses :patientId="patientId"></v-2d-isodoses>
     </div>
     <div class="side column is-half">
+      <b-input maxlength="200" type="textarea" v-model="comment"></b-input>
+      <b-button type="is-primary" @click="snack()">Add Comment</b-button>
     </div>
   </div>
 </template>
