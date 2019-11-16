@@ -2,19 +2,19 @@
   <div class="step-4">
     <h1 class="title has-text-centered">Organ Countouring</h1>
     <div class="view">
-      <div class="threejs">
-
-      </div>
+      <v-3d-renderer></v-3d-renderer>
     </div>
   </div>
 </template>
 
 <script>
 import { postReview } from "../api/patients.js"
+import V3dRenderer from '../components/3d-renderer'
 
 export default {
   name: "the-fourth-step",
   components: {
+    V3dRenderer
   },
   data () {
     return {

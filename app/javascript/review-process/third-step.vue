@@ -1,20 +1,23 @@
 <template>
   <div class="step-3">
     <h1 class="title has-text-centered">Organ Countouring</h1>
-    <div class="view">
-      <div class="threejs">
+    <div class="side">
 
-      </div>
+    </div>
+    <div id="model" class="model">
+      <v-3d-renderer></v-3d-renderer>
     </div>
   </div>
 </template>
 
 <script>
 import { postReview } from "../api/patients.js"
+import V3dRenderer from "../components/3d-renderer"
 
 export default {
   name: "the-third-step",
   components: {
+    V3dRenderer
   },
   data () {
     return {
@@ -36,9 +39,5 @@ export default {
 </script>
 
 <style lang="scss">
-  .threejs {
-    width: 60%;
-    height: 80vh;
-    background-color: green;
-  }
+
 </style>

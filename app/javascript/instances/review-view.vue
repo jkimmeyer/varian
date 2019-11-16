@@ -9,7 +9,8 @@
           :animated="isAnimated"
           :has-navigation="hasNavigation"
           :icon-prev="prevIcon"
-          :icon-next="nextIcon">
+          :icon-next="nextIcon"
+          destroy-on-hide>
 
           <b-step-item label="Organ Countouring" :clickable="isStepsClickable">
             <the-first-step :patientId="patientId"></the-first-step>
@@ -71,7 +72,7 @@ export default {
   },
   created () {
     let url = window.location.pathname;
-    this.patientId = url.substring(url.lastIndexOf('/') + 1);
+    this.patientId = parseInt(url.substring(url.lastIndexOf('/') + 1));
   }
 }
 </script>

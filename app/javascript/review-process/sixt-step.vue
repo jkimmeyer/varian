@@ -1,6 +1,7 @@
 <template>
   <div class="step-6">
     <h1 class="title has-text-centered">Robustness and Treatment safety</h1>
+    <a class="button is-primary" href="/report">Zusammenfassung</a>
   </div>
 </template>
 

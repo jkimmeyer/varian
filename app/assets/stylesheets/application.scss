@@ -42,8 +42,16 @@ $link-focus-border: $primary;
 
 .step-1 {
   display: grid;
-  grid-template-columns: 3fr 9fr;
+  grid-template-columns: repeat(12, 1fr);
   grid-gap: 30px;
+}
+
+.model {
+  grid-column: 5 / 13
+}
+
+.side {
+  grid-column: 1 / 4
 }
 
 .title {
