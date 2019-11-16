@@ -36,16 +36,4 @@ class TreatmentPlan < ApplicationRecord
   def resettable?
     status.in?(%w[approved rejected])
   end
-
-  def approve!
-    update(status: 'approved')
-  end
-
-  def reject!
-    update(status: 'rejected')
-  end
-
-  def reset!
-    update(status: 'created')
-  end
 end
