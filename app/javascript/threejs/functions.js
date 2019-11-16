@@ -1,8 +1,7 @@
 const THREE = require('three');
-const PLYLoader = require('three-ply-loader');
+const PLYLoader = require('three-ply-loader')(THREE);
 const OrbitControls = require('three-orbit-controls')(THREE);
 import WindowResize from 'three-window-resize';
-PLYLoader(THREE);
 
 var camera, scene, renderer;
 
@@ -52,6 +51,18 @@ const ThreeJSHelper = {
       var mesh = new THREE.Mesh(geometry, material);
       mesh.position.set(0, 0, 0);
       scene.add(mesh);
+    }, undefined, function ( error ) {
+      console.error( error );
+    });
+
+    var meshUrl2 = "http://localhost:3000/PTV70.ply"
+    loader.load(meshUrl2, function ( geometry ) {
+      geometry.computeVertexNormals();
+      var material = new THREE.MeshPhongMaterial({ color: 0xff8a8a, specular: 0x111111 });
+      material.side = THREE.DoubleSide;
+      var mesh2 = new THREE.Mesh(geometry, material);
+      mesh2.position.set(0, 0, 0);
+      scene.add(mesh2);
     }, undefined, function ( error ) {
       console.error( error );
     });
