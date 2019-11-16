@@ -1,12 +1,14 @@
 <template>
   <div id="app">
     <the-header></the-header>
-    <patient-overview></patient-overview>
-    <b-button type="is-primary">{{ message }}</b-button>
+    <patient-overview :patients="patients"></patient-overview>
+    <b-button type="is-primary"></b-button>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 import TheHeader from '../components/header';
 import PatientOverview from '../components/patient-overview';
 
@@ -15,10 +17,22 @@ export default {
     TheHeader,
     PatientOverview,
   },
-  data: function () {
-    return {
-      message: "Hello Vue!"
-    }
+  data() {
+      return {
+        patients: [],
+        errors: []
+      }
+    },
+  // Fetches posts when the component is created.
+  created() {
+    axios.get('http://localhost:3000/api/patients')
+    .then(response => {
+      // JSON responses are automatically parsed.
+      this.patients = response.data
+    })
+    .catch(e => {
+      this.errors.push(e)
+    })
   }
 }
 

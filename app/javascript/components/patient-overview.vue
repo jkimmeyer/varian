@@ -2,7 +2,7 @@
     <section>
       <b-collapse
           class="card"
-          v-for="(collapse, index) of collapses"
+          v-for="(patient, index) of patients"
           :key="index"
           :open="isOpen == index"
           @open="isOpen = index">
@@ -12,7 +12,7 @@
           class="card-header"
           role="button">
           <p class="card-header-title">
-            {{ collapse.title }}
+            {{ patient.firstName }} {{ patient.lastName }}
           </p>
           <a class="card-header-icon">
             <b-icon
@@ -22,7 +22,6 @@
         </div>
         <div class="card-content">
           <div class="content">
-              {{ collapse.text }}
           </div>
         </div>
       </b-collapse>
@@ -32,23 +31,15 @@
 <script>
   export default {
     name: 'patient-overview',
+    props: {
+      patients: {
+        type: Array,
+      }
+    },
     data() {
       return {
         isOpen: 0,
-        collapses: [
-          {
-            title: 'Title 1',
-            text: 'Text 1'
-          },
-          {
-            title: 'Title 2',
-            text: 'Text 2'
-          },
-          {
-            title: 'Title 3',
-            text: 'Text 3'
-          }
-       ]
+        patients: [],
     }
   }
 }
