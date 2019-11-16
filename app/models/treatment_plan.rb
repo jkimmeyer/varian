@@ -24,4 +24,28 @@ class TreatmentPlan < ApplicationRecord
   has_many :beams
   has_many :isodoses
   has_many :dvh_curves
+
+  def approvable?
+    status == 'created'
+  end
+
+  def rejectable?
+    status == 'created'
+  end
+
+  def resettable?
+    status.in?(%w[approved rejected])
+  end
+
+  def approve!
+    update(status: 'approved')
+  end
+
+  def reject!
+    update(status: 'rejected')
+  end
+
+  def reset!
+    update(status: 'created')
+  end
 end
