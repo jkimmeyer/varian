@@ -1,10 +1,10 @@
 <template>
-  <div class="step-3">
-    <h1 class="title has-text-centered">Dose Distribution</h1>
-    <div class="side">
-    </div>
-    <div id="model" class="model">
+  <div class="step-3 columns">
+    <div id="model column is-half" class="model">
+      <h1 class="title">Dose Distribution</h1>
       <v-2d-isodoses :patientId="patientId"></v-2d-isodoses>
+    </div>
+    <div class="side column is-half">
     </div>
   </div>
 </template>

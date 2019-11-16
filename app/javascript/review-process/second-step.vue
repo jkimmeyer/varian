@@ -1,12 +1,11 @@
 <template>
-  <div class="review-step">
-    <h1 class="title has-text-centered">Organ Countouring</h1>
-    <div class="side">
-
-    </div>
-    <div class="model">
+  <div class="review-step columns">
+    <div class="model column is-half">
+      <h1 class="title">Gross Deviation</h1>
       <b-table :data="data" :columns="columns" :selected.sync="selected" focusable></b-table>
       <b-button type="is-primary" @click="sendComment(comment)"> Add Comment</b-button>
+    </div>
+    <div class="side column is-half">
     </div>
   </div>
 </template>

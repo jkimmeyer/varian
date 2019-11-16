@@ -1,14 +1,13 @@
 <template>
-  <div class="review-step">
-    <h1 class="title has-text-centered">Organ Countouring</h1>
-    <div class="side">
+  <div class="review-step columns">
+    <div id="model" class="model column is-half">
+      <h1 class="title">Organ Countouring</h1>
+      <v-3d-renderer></v-3d-renderer>
+    </div>
+    <div class="side column is-half">
       <v-select :options="options"></v-select>
       <b-input maxlength="200" type="textarea" v-model="comment"></b-input>
       <b-button type="is-primary" @click="sendComment(comment)"> Add Comment</b-button>
-    </div>
-
-    <div id="model" class="model">
-      <v-3d-renderer></v-3d-renderer>
     </div>
   </div>
 </template>
