@@ -6,6 +6,8 @@ class ThreeImageSerializer < ActiveModel::Serializer
   has_many :structures
 
   def image_voxels
+    return unless object.image_voxels.attached?
+
     rails_blob_path(object.image_voxels, only_path: true)
   end
 end
