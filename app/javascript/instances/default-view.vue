@@ -1,12 +1,15 @@
 <template>
-  <div id="app">
-    <the-header></the-header>
-    <patient-overview :patients="patients"></patient-overview>
-    <b-button type="is-primary"></b-button>
+  <div class="page">
+    <div id="default">
+      <the-header></the-header>
+      <patient-overview :patients="patients"></patient-overview>
+      <b-button type="is-primary">Button</b-button>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import TheHeader from '../components/header';
 import PatientOverview from '../components/patient-overview';
 

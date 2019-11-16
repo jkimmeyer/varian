@@ -1,37 +1,41 @@
 <template>
-  <div id="review">
-    <b-steps
-      class="stepper"
-      v-model="activeStep"
-      :animated="isAnimated"
-      :has-navigation="hasNavigation"
-      :icon-prev="prevIcon"
-      :icon-next="nextIcon">
+  <div class="page">
+    <the-header></the-header>
 
-      <b-step-item label="Organ Countouring" :clickable="isStepsClickable">
-        <the-first-step></the-first-step>
-      </b-step-item>
+    <div id="review">
+        <b-steps
+          class="stepper"
+          v-model="activeStep"
+          :animated="isAnimated"
+          :has-navigation="hasNavigation"
+          :icon-prev="prevIcon"
+          :icon-next="nextIcon">
 
-      <b-step-item label="Gross Deviation" :clickable="isStepsClickable">
-        <the-second-step></the-second-step>
-      </b-step-item>
+          <b-step-item label="Organ Countouring" :clickable="isStepsClickable">
+            <the-first-step></the-first-step>
+          </b-step-item>
 
-      <b-step-item label="Dose Distribution" :clickable="isStepsClickable">
-        <the-third-step></the-third-step>
-      </b-step-item>
+          <b-step-item label="Gross Deviation" :clickable="isStepsClickable">
+            <the-second-step></the-second-step>
+          </b-step-item>
 
-      <b-step-item label="Treatment Protocol" :clickable="isStepsClickable" disabled>
-        <the-fourth-step></the-fourth-step>
-      </b-step-item>
+          <b-step-item label="Dose Distribution" :clickable="isStepsClickable">
+            <the-third-step></the-third-step>
+          </b-step-item>
 
-      <b-step-item label="Optimatility of Treatment" :clickable="isStepsClickable" disabled>
-        <the-fifth-step></the-fifth-step>
-      </b-step-item>
+          <b-step-item label="Treatment Protocol" :clickable="isStepsClickable" disabled>
+            <the-fourth-step></the-fourth-step>
+          </b-step-item>
 
-      <b-step-item label="Robustness and Treatment safety" :clickable="isStepsClickable" disabled>
-        <the-sixt-step></the-sixt-step>
-      </b-step-item>
-    </b-steps>
+          <b-step-item label="Optimatility of Treatment" :clickable="isStepsClickable" disabled>
+            <the-fifth-step></the-fifth-step>
+          </b-step-item>
+
+          <b-step-item label="Robustness and Treatment safety" :clickable="isStepsClickable" disabled>
+            <the-sixt-step></the-sixt-step>
+          </b-step-item>
+        </b-steps>
+      </div>
   </div>
 </template>
 
@@ -42,6 +46,7 @@ import TheThirdStep from '../review-process/third-step'
 import TheFourthStep from '../review-process/fourth-step'
 import TheFifthStep from '../review-process/fifth-step'
 import TheSixtStep from '../review-process/sixt-step'
+import TheHeader from '../components/header'
 
 
 export default {
@@ -52,6 +57,7 @@ export default {
     TheFourthStep,
     TheFifthStep,
     TheSixtStep,
+    TheHeader
   },
   data() {
     return {
