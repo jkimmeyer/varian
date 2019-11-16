@@ -1,11 +1,11 @@
 <template>
   <div class="review-step columns">
-    <div id="model" class="model">
+    <div id="model" class="model column is-half">
       <v-3d-renderer></v-3d-renderer>
     </div>
-    <div class="side">
-      <v-select class="select" v-if="options.length > 0" :options="options" v-model="selectedOptions"></v-select>
-      <b-input class="input-field" maxlength="400" type="textarea" v-model="comment"></b-input>
+    <div class="side column is-half">
+      <v-select :options="options"></v-select>
+      <b-input maxlength="200" type="textarea" v-model="comment"></b-input>
       <b-button type="is-primary" @click="sendComment(comment)"> Add Comment</b-button>
     </div>
   </div>

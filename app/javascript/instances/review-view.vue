@@ -28,9 +28,9 @@
             <the-fourth-step :patientId="patientId" :treatmentPlan="treatmentPlan"></the-fourth-step>
           </b-step-item>
 
-          <b-step-item label="Optimatility of Treatment" :clickable="isStepsClickable" disabled>
+          <!-- <b-step-item label="Optimatility of Treatment" :clickable="isStepsClickable" disabled>
             <the-fifth-step :patientId="patientId" :treatmentPlan="treatmentPlan"></the-fifth-step>
-          </b-step-item>
+          </b-step-item> -->
 
           <b-step-item label="Robustness and Treatment safety" :clickable="isStepsClickable" disabled>
             <the-sixt-step :patientId="patientId" :treatmentPlan="treatmentPlan"></the-sixt-step>
@@ -45,7 +45,7 @@ import TheFirstStep from '../review-process/first-step'
 import TheSecondStep from '../review-process/second-step'
 import TheThirdStep from '../review-process/third-step'
 import TheFourthStep from '../review-process/fourth-step'
-import TheFifthStep from '../review-process/fifth-step'
+// import TheFifthStep from '../review-process/fifth-step'
 import TheSixtStep from '../review-process/sixt-step'
 import TheHeader from '../components/header'
 
@@ -57,7 +57,7 @@ export default {
     TheSecondStep,
     TheThirdStep,
     TheFourthStep,
-    TheFifthStep,
+    // TheFifthStep,
     TheSixtStep,
     TheHeader
   },
