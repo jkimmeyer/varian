@@ -9,8 +9,8 @@ require("@rails/activestorage").start()
 require('jquery')
 require("channels")
 
-import '../css/application';
-
+import '../../assets/stylesheets/bulma-overrides.scss'
+import 'buefy/dist/buefy.css'
 // Custom JavaScript
 // require('../custom/sutff/main.js')
 
