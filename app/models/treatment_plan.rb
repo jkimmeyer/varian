@@ -20,7 +20,7 @@ class TreatmentPlan < ApplicationRecord
   has_one_attached :dvh_graph
   has_many_attached :bitmaps
 
-  has_one :image_3d
+  has_one :three_image
   has_many :beams
   has_many :isodoses
   has_many :dvh_curves

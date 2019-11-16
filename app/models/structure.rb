@@ -6,7 +6,7 @@ class Structure < ApplicationRecord
   # }
   serialize :center_point
 
-  belongs_to :image_3d
+  belongs_to :three_image
 
   has_one_attached :contours
   has_one_attached :mesh
