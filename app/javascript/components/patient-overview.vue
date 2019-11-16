@@ -1,19 +1,27 @@
 <template>
-    <section>
+    <section class="patient-overview">
       <b-collapse
-          class="card"
-          v-for="(collapse, index) of collapses"
-          :key="index"
-          :open="isOpen == index"
-          @open="isOpen = index">
+        class="card"
+        v-for="(patient, index) of patients"
+        :key="index"
+        :open="isOpen == index"
+        @open="isOpen = index">
         <div
           slot="trigger"
           slot-scope="props"
           class="card-header"
           role="button">
+          <b-tag class="card-badge" type="is-info">{{ patientReviewState }}</b-tag>
           <p class="card-header-title">
-            {{ collapse.title }}
+            {{ patient.firstName }} {{ patient.lastName }}
           </p>
+
+          <a href="/home/1" class="card-header-icon">
+            <b-icon
+              icon="account-arrow-right">
+            </b-icon>
+          </a>
+
           <a class="card-header-icon">
             <b-icon
               :icon="props.open ? 'menu-down' : 'menu-up'">
@@ -22,7 +30,6 @@
         </div>
         <div class="card-content">
           <div class="content">
-              {{ collapse.text }}
           </div>
         </div>
       </b-collapse>
@@ -32,24 +39,29 @@
 <script>
   export default {
     name: 'patient-overview',
+    props: {
+      patients: {
+        type: Array,
+      }
+    },
     data() {
       return {
-        isOpen: 0,
-        collapses: [
-          {
-            title: 'Title 1',
-            text: 'Text 1'
-          },
-          {
-            title: 'Title 2',
-            text: 'Text 2'
-          },
-          {
-            title: 'Title 3',
-            text: 'Text 3'
-          }
-       ]
-    }
+        patientReviewState: 'In Progress',
+        isOpen: null,
+      }
+    },
+    methods: {
+    },
   }
-}
 </script>
+
+<style>
+  .card-header {
+    display: flex;
+    align-items: center !important;
+  }
+
+  .card-badge {
+    margin-left: 10px
+  }
+</style>
