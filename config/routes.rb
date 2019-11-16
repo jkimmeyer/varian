@@ -5,6 +5,15 @@ Rails.application.routes.draw do
   get 'report', to: 'home#report'
 
   namespace :api do
-    resources :patients, only: %i[index show]
+    resources :patients, only: %i[index show] do
+      resources :treatment_plans, only: %i[index show] do
+        member do
+          post :update_status
+        end
+        collection do
+          get :current
+        end
+      end
+    end
   end
 end

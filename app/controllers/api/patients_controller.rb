@@ -6,4 +6,10 @@ class Api::PatientsController < ApplicationController
   def show
     render json: Patient.find(params[:id]), serializer: PatientSerializer
   end
+
+  private
+
+  def patient_params
+    params.require(:patient).permit!
+  end
 end

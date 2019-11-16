@@ -1,7 +1,7 @@
 class TreatmentPlanSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
 
-  attributes :id, :name, :number_of_fractions, :planned_dose_per_fraction, :grid_size, :bitmaps, :dose_voxels, :dvh_graph
+  attributes :id, :name, :status, :number_of_fractions, :planned_dose_per_fraction, :grid_size, :bitmaps, :dose_voxels, :dvh_graph
 
   has_one :three_image
   has_many :beams
