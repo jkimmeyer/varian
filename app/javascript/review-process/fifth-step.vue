@@ -13,11 +13,17 @@
 </template>
 
 <script>
-import { sendData } from "../api/api.js"
+import { postReview } from "../api/patients.js"
 
 export default {
   name: "the-fifth-step",
   components: {
+  },
+  props: {
+    patientId: {
+      type: Number,
+      default: null,
+    }
   },
   data () {
     return {
@@ -33,7 +39,7 @@ export default {
       this.currentPlan--;
     },
     sendComment: function (payload) {
-      sendData('comments', payload);
+      postReview('comments', payload);
     }
   }
 }

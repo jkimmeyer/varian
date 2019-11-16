@@ -66,15 +66,6 @@ ActiveRecord::Schema.define(version: 2019_11_16_103933) do
     t.index ["treatment_plan_id"], name: "index_dvh_curves_on_treatment_plan_id"
   end
 
-  create_table "image_3ds", force: :cascade do |t|
-    t.string "name"
-    t.text "grid_size"
-    t.bigint "treatment_plan_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["treatment_plan_id"], name: "index_image_3ds_on_treatment_plan_id"
-  end
-
   create_table "isodoses", force: :cascade do |t|
     t.decimal "level", precision: 15, scale: 10
     t.decimal "volume", precision: 15, scale: 10
@@ -97,10 +88,19 @@ ActiveRecord::Schema.define(version: 2019_11_16_103933) do
     t.text "center_point"
     t.string "color"
     t.boolean "is_target_structure"
-    t.bigint "image_3d_id"
+    t.bigint "three_image_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["image_3d_id"], name: "index_structures_on_image_3d_id"
+    t.index ["three_image_id"], name: "index_structures_on_three_image_id"
+  end
+
+  create_table "three_images", force: :cascade do |t|
+    t.string "name"
+    t.text "grid_size"
+    t.bigint "treatment_plan_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["treatment_plan_id"], name: "index_three_images_on_treatment_plan_id"
   end
 
   create_table "treatment_plans", force: :cascade do |t|

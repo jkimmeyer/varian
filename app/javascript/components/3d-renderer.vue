@@ -1,5 +1,6 @@
 <template>
-  <div></div>
+  <div id="renderer">
+  </div>
 </template>
 
 <script>
@@ -7,7 +8,7 @@ import { ThreeJSHelper, animate } from '../threejs/functions'
 
 export default {
   name: "v-3d-renderer",
-  created () {
+  mounted () {
     ThreeJSHelper.init();
     animate();
   }

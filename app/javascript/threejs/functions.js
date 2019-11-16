@@ -24,9 +24,7 @@ const ThreeJSHelper = {
     renderer.shadowMap.enabled = true;
     renderer.shadowMapSoft = true;
 
-    var container = document.createElement('div');
-    document.body.appendChild(container);
-    container.appendChild(renderer.domElement);
+    document.querySelector('#renderer').appendChild(renderer.domElement);
 
     WindowResize(renderer, camera);
 

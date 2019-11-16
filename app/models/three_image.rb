@@ -1,4 +1,4 @@
-class Image3D < ApplicationRecord
+class ThreeImage < ApplicationRecord
   # {
   #   "xSize": integer,
   #   "ySize": integer,

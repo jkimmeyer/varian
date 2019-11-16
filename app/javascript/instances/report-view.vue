@@ -2,22 +2,25 @@
   <div class="page">
     <div id="default">
       <the-header></the-header>
-      <patient-overview :patients="patients"></patient-overview>
-      <p v-if="patients.length == 0"> No patients found.</p>
+      <report-overview ></report-overview>
+      <b-label>Any further comments</b-label>
+      <b-input maxLength="400" type="textarea"></b-input>
+      <b-button type="is-danger">Decline</b-button>
+      <b-button type="is-success">Approve</b-button>
     </div>
   </div>
 </template>
 
 <script>
-import { getPatients } from '../api/patients'
+import { getReport } from '../api/patients'
 
 import TheHeader from '../components/header';
-import PatientOverview from '../components/patient-overview';
+import ReportOverview from '../components/report-overview';
 
 export default {
   components: {
     TheHeader,
-    PatientOverview,
+    ReportOverview,
   },
   data() {
       return {
