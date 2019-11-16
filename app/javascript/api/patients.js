@@ -1,5 +1,26 @@
 import axios from 'axios'
-import { PatientInstance } from '../instances'
+
+
+export async function getPatients() {
+  return await axios.get('http://localhost:3000/api/patients/');
+}
+
+export async function getPatient(patientId) {
+  return await axios.get('http://localhost:3000/api/patients/' + patientId)
+}
+
+export async function getCurrentTreatmentPlan(patientId) {
+  return await axios.get('http://localhost:3000/api/patients/' + patientId + '/treatment_plans/current')
+}
+
+export async function getTreatmentPlans(patientId) {
+  return await axios.get('http://localhost:3000/api/patients/' + patientId + '/treatment_plans/')
+}
+
+export async function updateStatus(status, patientId, treatmentPlanId) {
+  let payload = {status: status};
+  return await axios.post('http://localhost:3000/api/patients/' + patientId + '/treatment_plans/'+ treatmentPlanId, payload)
+}
 
 export function postReview(patientId, treatmentPlanId, reviewStepId, payload) {
   axios.post('http://localhost:3000/api/patients/' + patientId + '/treatment_plans/' + treatmentPlanId + '/review-step/' + reviewStepId,
@@ -10,43 +31,6 @@ export function postReview(patientId, treatmentPlanId, reviewStepId, payload) {
   })
   .catch(e => {
     console.log(e)
-  })
-}
-
-export function getPatients() {
-  let patients = [];
-  let errors = [];
-  axios.get('http://localhost:3000/api/patients/')
-  .then(response => {
-    // JSON responses are automatically parsed.
-    patients = response;
-  })
-  .catch(e => {
-    errors = e;
-  })
-  console.log(patients)
-  return {patients: patients, errors: errors};
-}
-
-export function getCurrentTreatmentPlan(patientId) {
-  axios.get('http://localhost:3000/api/patients/' + patientId + '/treatment_plans/current')
-  .then(response => {
-    // JSON responses are automatically parsed.
-    return response;
-  })
-  .catch(e => {
-    return e;
-  })
-}
-
-export function getPatient(patientId) {
-  axios.get('http://localhost:3000/api/patients/' + patientId)
-  .then(response => {
-    // JSON responses are automatically parsed.
-    return response;
-  })
-  .catch(e => {
-    return e;
   })
 }
 

@@ -6,34 +6,38 @@
       <b-label>Any further comments</b-label>
       <b-input maxLength="400" type="textarea"></b-input>
       <div class="buttons">
-        <b-button type="is-danger">Decline</b-button>
-        <b-button type="is-success">Approve</b-button>
+        <b-button type="is-danger" @click="updateStatus('rejected', patientId, treatmentPlanId)">Decline</b-button>
+        <b-button type="is-success" @click="updateStatus('approved', patientId, treatmentPlanId)">Approve</b-button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { getReport } from '../api/patients'
 
 import TheHeader from '../components/header';
 import ReportOverview from '../components/report-overview';
+import { updateStatus } from '../api/patients'
 
 export default {
   components: {
     TheHeader,
     ReportOverview,
   },
-  data() {
-      return {
-        patients: [],
-        errors: []
-      }
+  props: {
+    treatmentPlanId: {
+      type: Number,
+      default: 1,
     },
-  // Fetches posts when the component is created.
-  created() {
-    getPatients();
-  }
+    patientId: {
+      type: Number,
+      default: 1,
+    }
+  },
+  data() {
+    return {
+    }
+  },
 }
 
 </script>

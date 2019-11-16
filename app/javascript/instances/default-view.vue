@@ -22,13 +22,12 @@ export default {
   data() {
       return {
         patients: [],
-        errors: []
       }
     },
   // Fetches posts when the component is created.
-  created() {
-    console.log(getPatients());
-    this.patients = getPatients();
+  async created () {
+    let response = await getPatients();
+    this.patients = response.data;
   }
 }
 

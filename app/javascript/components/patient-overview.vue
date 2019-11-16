@@ -10,8 +10,9 @@
           slot="trigger"
           slot-scope="props"
           class="card-header"
-          role="button">
-          <b-tag class="card-badge" type="is-info">{{ patientReviewState }}</b-tag>
+          role="button"
+          @click="treatmentPlan(patient.id)">
+          <b-tag class="card-badge" :type="tagColor(patient.status)">{{ patient.status }}</b-tag>
           <p class="card-header-title">
             {{ patient.firstName }} {{ patient.lastName }}
           </p>
@@ -30,9 +31,10 @@
         </div>
         <div class="card-content">
           <div class="content">
+            <h5>TreatmentPlan Historie</h5>
             <ul class="patient-information">
-              <li v-bind:key="prop" v-show="value !== ''" v-for="(value, prop) in patient">
-                {{ prop.charAt(0).toUpperCase() + prop.slice(1) }}: {{ value.charAt(0).toUpperCase() + value.slice(1) }}
+              <li v-bind:key="treatmentPlan" v-for="treatmentPlan in patient.treatmentPlans">
+                <a v-bind:href="'/patients/' + patient.id + '/treatmentPlans/' + treatmentPlan.id">{{ treatmentPlan.name }}</a>
               </li>
             </ul>
           </div>
@@ -42,22 +44,31 @@
 </template>
 
 <script>
-  export default {
-    name: 'patient-overview',
-    props: {
-      patients: {
-        type: Array,
+export default {
+  name: 'patient-overview',
+  props: {
+    patients: {
+      type: Array,
+    }
+  },
+  data() {
+    return {
+      patientReviewState: 'In Progress',
+      isOpen: null,
+    }
+  },
+  methods: {
+    tagColor: function (status) {
+      if(status === 'created') {
+        return 'is-info';
+      }else if (status === "approved") {
+        return 'is-success';
+      } else {
+        return 'is-danger';
       }
-    },
-    data() {
-      return {
-        patientReviewState: 'In Progress',
-        isOpen: null,
-      }
-    },
-    methods: {
-    },
+    }
   }
+}
 </script>
 
 <style>
@@ -68,5 +79,11 @@
 
   .card-badge {
     margin-left: 10px
+  }
+
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: underline #3a4b57;
   }
 </style>
