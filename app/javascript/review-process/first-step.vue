@@ -6,7 +6,7 @@
     <div class="side column is-half">
       <v-select :options="options"></v-select>
       <b-input maxlength="200" type="textarea" v-model="comment"></b-input>
-      <b-button type="is-primary" @click="sendComment(comment)"> Add Comment</b-button>
+      <b-button type="is-primary" @click="snackbar()"> Add Comment</b-button>
     </div>
   </div>
 </template>
@@ -46,7 +46,10 @@ export default {
     sendComment: function (payload) {
       let path = 'patient/3/plan/2/review/1/comments'
       postReview(path, payload);
-    }
+    },
+    snackbar() {
+      this.$buefy.snackbar.open(`Comment sent!`)
+    },
   }
 }
 </script>

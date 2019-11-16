@@ -44,6 +44,7 @@ export default {
   methods: {
     review: function (status, patientId, treatmentPlanId) {
       updateStatus(status, patientId, treatmentPlanId)
+      window.location.href= "/"
     }
   }
 }

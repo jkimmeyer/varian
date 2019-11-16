@@ -13,7 +13,7 @@
         </b-checkbox>
       </div>
 
-      <a class="button is-primary" href="/report">Zusammenfassung</a>
+      <a class="button is-primary" href="/report">Summary</a>
     </div>
 
   </div>
