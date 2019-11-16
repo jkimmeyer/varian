@@ -1,7 +1,8 @@
 <template>
-  <div class="review-step">
-    <h1 class="title has-text-centered">Robustness and Treatment safety</h1>
-    <div class="side">
+  <div class="review-step columns">
+    <div class="model column is-half">
+    </div>
+    <div class="side column is-half">
       <div class="field">
         <b-checkbox>Position</b-checkbox>
       </div>
@@ -15,8 +16,6 @@
       <a class="button is-primary" href="/report">Zusammenfassung</a>
     </div>
 
-    <div class="model">
-    </div>
   </div>
 </template>
 

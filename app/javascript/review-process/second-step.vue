@@ -1,7 +1,6 @@
 <template>
   <div class="review-step columns">
     <div class="model column is-half">
-      <h1 class="title">Gross Deviation</h1>
       <b-table :data="data" :columns="columns" :selected.sync="selected" focusable></b-table>
       <b-button type="is-primary" @click="sendComment(comment)"> Add Comment</b-button>
     </div>

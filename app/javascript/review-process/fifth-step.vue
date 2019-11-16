@@ -1,12 +1,11 @@
 <template>
-  <div class="review-step">
-    <h1 class="title has-text-centered">Treatment Protocol</h1>
-    <div class="side"></div>
-    <div class="model">
+  <div class="review-step columns">
+    <div class="model colucolumn is-halfmn">
       <div class="threejs">
         <div>{{ currentPlan }}</div>
       </div>
     </div>
+    <div class="side column is-half"></div>
 
     <b-button type="is-primary" :disabled="currentPlan === 1" @click="previous()">Previous Plan</b-button>
     <b-button type="is-primary" :disabled="currentPlan > plans.length" @click="next()">Next Plan</b-button>

@@ -1,10 +1,9 @@
 <template>
-  <div class="review-step">
-    <h1 class="title has-text-centered">Organ Countouring</h1>
-    <div class="side"></div>
-    <div class="model">
+  <div class="review-step columns">
+    <div class="model column is-half">
       <v-3d-renderer></v-3d-renderer>
     </div>
+    <div class="side column is-half"></div>
   </div>
 </template>
 
