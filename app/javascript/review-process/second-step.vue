@@ -1,7 +1,10 @@
 <template>
-  <div class="step-2">
+  <div class="review-step">
     <h1 class="title has-text-centered">Organ Countouring</h1>
-    <div class="view">
+    <div class="side">
+
+    </div>
+    <div class="model">
       <b-table :data="data" :columns="columns" :selected.sync="selected" focusable></b-table>
       <b-button type="is-primary" @click="sendComment(comment)"> Add Comment</b-button>
     </div>

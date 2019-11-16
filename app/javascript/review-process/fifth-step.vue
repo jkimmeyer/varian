@@ -1,7 +1,8 @@
 <template>
-  <div class="step-5">
+  <div class="review-step">
     <h1 class="title has-text-centered">Treatment Protocol</h1>
-    <div class="view">
+    <div class="side"></div>
+    <div class="model">
       <div class="threejs">
         <div>{{ currentPlan }}</div>
       </div>

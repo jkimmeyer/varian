@@ -8,4 +8,8 @@ class HomeController < ApplicationController
   def report
 
   end
+
+  def patient
+
+  end
 end

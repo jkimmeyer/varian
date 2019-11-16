@@ -1,7 +1,22 @@
 <template>
-  <div class="step-6">
+  <div class="review-step">
     <h1 class="title has-text-centered">Robustness and Treatment safety</h1>
-    <a class="button is-primary" href="/report">Zusammenfassung</a>
+    <div class="side">
+      <div class="field">
+        <b-checkbox>Position</b-checkbox>
+      </div>
+
+      <div class="field">
+        <b-checkbox>
+          Safety
+        </b-checkbox>
+      </div>
+
+      <a class="button is-primary" href="/report">Zusammenfassung</a>
+    </div>
+
+    <div class="model">
+    </div>
   </div>
 </template>
 

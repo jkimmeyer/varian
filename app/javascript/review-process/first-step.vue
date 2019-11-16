@@ -1,5 +1,5 @@
 <template>
-  <div class="step-1">
+  <div class="review-step">
     <h1 class="title has-text-centered">Organ Countouring</h1>
     <div class="side">
       <v-select :options="options"></v-select>

@@ -1,6 +1,7 @@
 import DefaultView from './instances/default-view';
 import ReviewView from './instances/review-view';
 import ReportView from './instances/report-view';
+import PatientView from './instances/patient-view';
 
 export const AppInstance = {
   el: '#app',
@@ -15,4 +16,9 @@ export const ReviewInstance = {
 export const ReportInstance = {
   el: '#report',
   component: ReportView,
+}
+
+export const PatientInstance = {
+  el: '#patient',
+  component: PatientView,
 }

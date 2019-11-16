@@ -40,7 +40,7 @@ $link-focus-border: $primary;
 @import "../../../node_modules/buefy/src/scss/buefy";
 
 
-.step-1 {
+.review-step {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 30px;

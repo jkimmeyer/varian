@@ -1,7 +1,7 @@
 <template>
   <b-navbar class="header">
     <template slot="brand">
-      <b-navbar-item tag="router-link" :to="{ path: '/' }">
+      <b-navbar-item :to="{ path: '/' }">
         <div class="header-brand-name">
           <img
               src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Varian_company_logo_2017.png"
@@ -22,6 +22,9 @@
       <b-navbar-item href="/">
         Patients
       </b-navbar-item>
+      <b-navbar-item href="/patient">
+        Patient Overview
+      </b-navbar-item>
     </template>
 
     <template slot="end">
@@ -30,11 +33,9 @@
       </b-navbar-item>
 
       <b-navbar-item tag="div">
-        <div class="buttons">
-          <a class="button is-light">
-            Log out
-          </a>
-        </div>
+        <a class="button is-light">
+          Log out
+        </a>
       </b-navbar-item>
     </template>
   </b-navbar>

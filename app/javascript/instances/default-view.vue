@@ -27,7 +27,8 @@ export default {
     },
   // Fetches posts when the component is created.
   created() {
-    getPatients();
+    console.log(getPatients());
+    this.patients = getPatients();
   }
 }
 

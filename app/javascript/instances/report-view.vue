@@ -5,8 +5,10 @@
       <report-overview ></report-overview>
       <b-label>Any further comments</b-label>
       <b-input maxLength="400" type="textarea"></b-input>
-      <b-button type="is-danger">Decline</b-button>
-      <b-button type="is-success">Approve</b-button>
+      <div class="buttons">
+        <b-button type="is-danger">Decline</b-button>
+        <b-button type="is-success">Approve</b-button>
+      </div>
     </div>
   </div>
 </template>
@@ -35,3 +37,9 @@ export default {
 }
 
 </script>
+
+<style lang="scss">
+.buttons {
+  margin-top: 20px;
+}
+</style>

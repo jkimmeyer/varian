@@ -1,8 +1,7 @@
 <template>
-  <div class="step-3">
+  <div class="review-step">
     <h1 class="title has-text-centered">Organ Countouring</h1>
     <div class="side">
-
     </div>
     <div id="model" class="model">
       <v-3d-renderer></v-3d-renderer>
