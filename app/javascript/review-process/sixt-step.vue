@@ -13,10 +13,9 @@
             Safety
           </b-checkbox>
         </div>
-
-        <a class="button is-primary" href="/report">Zusammenfassung</a>
       </div>
 
+      <a class="button is-primary" href="/report">Summary</a>
     </div>
   </section>
 </template>
