@@ -1,20 +1,39 @@
 <template>
   <section class="section">
-    <div class="review-step columns">
-      <div class="model column is-half">
+    <div class="container" style="max-width:60vw;">
+      <img src="/location.png" style="padding-bottom: 25px;">
+      <p style="padding-bottom: 10px;">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore 
+        et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
+        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea 
+        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed 
+        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
+        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
+        dolor sit amet.
+      </p>
+      <div class="field">
+        <b-checkbox>
+          Position
+        </b-checkbox>
       </div>
-      <div class="side column is-half">
-        <div class="field">
-          <b-checkbox>Position</b-checkbox>
-        </div>
-
-        <div class="field">
-          <b-checkbox>
-            Safety
-          </b-checkbox>
-        </div>
+      <p style="padding-bottom: 10px;">
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore 
+        et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
+        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+        sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea 
+        takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed 
+        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
+        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
+        dolor sit amet.
+      </p>
+      <div class="field">
+        <b-checkbox>
+          Safety
+        </b-checkbox>
       </div>
-
       <a class="button is-primary" href="/report">Summary</a>
     </div>
   </section>
