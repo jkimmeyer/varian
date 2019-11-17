@@ -1,6 +1,6 @@
 <template>
   <div class="review-step">
-    <h1 class="title has-text-centered">Organ Countouring</h1>
+    <h1 class="title has-text-centered">Treatment Protocol</h1>
     <div class="side">
       <h4>Add a comment to {{ selected.name }}</h4>
       <b-input type="textarea" :maxlength="200"></b-input>
