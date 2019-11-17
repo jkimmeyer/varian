@@ -1,7 +1,7 @@
 <template>
   <div class="review-step columns">
     <div class="model column is-half">
-      <v-3d-renderer></v-3d-renderer>
+      <v-dvh-graph :patientId="patientId"></v-dvh-graph>
     </div>
     <div class="side column is-half">
       <b-input maxlength="200" type="textarea" v-model="comment"></b-input>
@@ -12,12 +12,12 @@
 
 <script>
 import { postReview } from "../api/patients.js"
-import V3dRenderer from '../components/3d-renderer'
+import VDvhGraph from '../components/dvh-graph'
 
 export default {
   name: "the-second-step",
   components: {
-    V3dRenderer
+    VDvhGraph
   },
   data () {
     return {

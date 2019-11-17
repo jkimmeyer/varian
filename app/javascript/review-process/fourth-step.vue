@@ -33,7 +33,7 @@
     </div>
     <div class="side column is-half">
     </div>
-    <div class="side column is-half"></div>
+    <div class="side column is-one-quarter"></div>
   </div>
 </template>
 
