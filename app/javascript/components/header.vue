@@ -14,13 +14,7 @@
 
     <template slot="start">
       <b-navbar-item href="/">
-        Overview
-      </b-navbar-item>
-      <b-navbar-item href="/">
         Patients
-      </b-navbar-item>
-      <b-navbar-item href="/patient">
-        Patient Overview
       </b-navbar-item>
     </template>
 
