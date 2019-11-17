@@ -47,6 +47,9 @@ export default {
   methods: {
     sendComment: function (payload) {
       postReview('comments', payload);
+    },
+    snack: function () {
+      this.$buefy.snackbar.open(`Comment sent!`)
     }
   },
   props: {

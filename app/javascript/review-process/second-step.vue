@@ -2,17 +2,17 @@
   <section class="section">
     <div class="review-step columns">
       <div class="model column is-half">
-        <v-3d-renderer></v-3d-renderer>
+        <v-dvh-graph :patientId="patientId"></v-dvh-graph>
       </div>
       <div class="side column is-half">
         <p style="padding-bottom: 10px;">
-          <strong style="color: #0055ff">Upper Head</strong></br>
+          <strong style="color: #0055ff">Bowel</strong></br>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore 
           et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
           Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
         </p>
         <p style="padding-bottom: 10px;">
-          <strong style="color: #ff8a8a">Inner Head</strong></br>
+          <strong style="color: #ff2e2e">Femur_L</strong></br>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore 
           et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
           Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
@@ -26,12 +26,12 @@
 
 <script>
 import { postReview } from "../api/patients.js"
-import V3dRenderer from '../components/3d-renderer'
+import VDvhGraph from '../components/dvh-graph'
 
 export default {
   name: "the-second-step",
   components: {
-    V3dRenderer
+    VDvhGraph
   },
   data () {
     return {
