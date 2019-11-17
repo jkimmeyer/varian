@@ -1,6 +1,14 @@
 <template>
   <section class="section">
     <div class="side">
+      <p style="padding-bottom: 10px;">
+        <strong style="color: #ff2e2e">PTV_50.4</strong></br>
+        Seems slightly to high, please have a look!
+      </p>
+      <p style="padding-bottom: 10px;">
+        <strong style="color: #dbc900">Body</strong></br>
+        Totally fine.
+      </p>
       <h4>Add a comment to {{ selected.name }}</h4>
       <b-input type="textarea" :maxlength="200"></b-input>
       <b-button type="is-primary" @click="sendComment(comment, selected.id)"> Add Comment</b-button>
