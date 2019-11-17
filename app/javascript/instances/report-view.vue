@@ -2,15 +2,19 @@
   <div class="page">
     <div id="default">
       <the-header></the-header>
-      <report-overview ></report-overview>
-      <b-field label="Any further comments">
-        <b-input maxLength="400" type="textarea"></b-input>
-      </b-field>
+      <section class="section">
+        <div class="container" style="max-width:60vw;">
+          <report-overview ></report-overview>
+          <b-field label="Any further comments">
+            <b-input maxLength="400" type="textarea"></b-input>
+          </b-field>
 
-      <div class="buttons">
-        <b-button type="is-danger" @click="review('rejected', patientId, treatmentPlanId)">Decline</b-button>
-        <b-button type="is-success" @click="review('approved', patientId, treatmentPlanId)">Approve</b-button>
-      </div>
+          <div class="buttons">
+            <b-button type="is-danger" @click="review('rejected', patientId, treatmentPlanId)">Decline</b-button>
+            <b-button type="is-success" @click="review('approved', patientId, treatmentPlanId)">Approve</b-button>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 </template>
