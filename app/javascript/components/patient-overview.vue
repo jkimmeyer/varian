@@ -31,7 +31,7 @@
         </div>
         <div class="card-content">
           <div class="content">
-            <h5>TreatmentPlan Historie</h5>
+            <h5>TreatmentPlan History</h5>
             <ul class="patient-information">
               <li v-bind:key="treatmentPlan" v-for="treatmentPlan in patient.treatmentPlans">
                 <a v-bind:href="'/patients/' + patient.id + '/treatmentPlans/' + treatmentPlan.id">{{ treatmentPlan.name }}</a>

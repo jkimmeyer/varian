@@ -23,6 +23,11 @@ export default {
     patientId: {
       type: Number,
       default: null,
+    },
+    treatmentPlan: {
+      type: Object,
+      default: {},
+      required: true,
     }
   },
   data () {

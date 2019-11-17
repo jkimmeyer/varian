@@ -1,6 +1,6 @@
 <template>
   <div class="report-overview">
-    <div class="report-step" v-bind:key="report" v-for="report in reports">
+    <div class="report-step" v-bind:key="report.key" v-for="report in reports">
       <ul class="report-step-list">
         <li class="report-step-list-item" v-bind:key="key" v-for="(value, key) in report">
           <div>{{ key }}: {{ value }}</div>
